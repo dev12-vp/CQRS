@@ -16,4 +16,12 @@ export class UsersService {
     async getUserById(id: number) {
         return this.userRepository.findOne({ where: { id } });
     }
+
+    async getAllUsers() {
+        return this.userRepository.find();
+    }
+
+    async deleteUser(id: number) {
+        return this.userRepository.delete({ id })
+    }
 }
